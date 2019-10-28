@@ -1,7 +1,51 @@
 $(document).ready(function(){
 
+//    Анімація для навбару
+    $('#navbar').hover(function () {
+        $('.navbar-toggle-arrow:first').animate({ 'top': '-7' }, 70);
+        $('.navbar-toggle-arrow:last').animate({ 'top': '7' }, 70);
+    }, function () {
+        $('.navbar-toggle-arrow:first').animate({ 'top': '-5' }, 70);
+        $('.navbar-toggle-arrow:last').animate({ 'top': '5' }, 70);
+    });
+
+//    Поява меню
+    $('#navbar').click(function(){
+        $('body').css('overflow', 'hidden')
+        $('.menu').css('display', 'block')
+        $('.menu').animate({'width': '100%', 'height': '100%', 'left': '0', 'top': '0'}, 300)
+
+        $('.menu h1, h2').animate({'font-size': '30px'}, 300)
+    })
+
+//    Закрити меню
+    $('#closer').click(function(){
+        $('body').css('overflow', 'auto')
+        $('.menu').css('display', 'none')
+        $('.menu').animate({'width': '30%', 'height': '30%', 'left': '30%', 'top': '20%'}, 300)
+        $('.menu h1, h2').animate({'font-size': '10px'}, 300)
+    })
+
+//    Анімований блок з ім'ям персони
+    $('#animate-block').animate({'top': '44%', 'opacity': '1'}, 800)
+
+    function repeat_info(){
+        $('#animate-block .col:first').delay(4000).animate({'opacity': '0'}, 'slow')
+        $('#animate-block .col:last').delay(4500).animate({'opacity': '1'}, 'slow')
+
+        $('#animate-block .col:last').delay(4000).animate({'opacity': '0'}, 'slow')
+        $('#animate-block .col:first').delay(4500).animate({'opacity': '1'}, 'slow')
+    }
+
+//    Повторення анімації
+    setInterval(repeat_info)
+
+
+
 //    Поява локу з послугами
     $('.services-content .window-titles, .services-content .col-sm-4').animate({'top': '0px', 'opacity': '1'}, 'slow')
+
+
 
 //    Поява блоку з портфоліо
     $('.portfolio-content .window-titles, .portfolio-content .row:first').animate({'top': '0px', 'opacity': '1'}, 'slow')
@@ -9,6 +53,8 @@ $(document).ready(function(){
     if ( $(window).width() > 767 ){
         $('.resume-content h1:first').animate({'top': '0px', 'opacity': '0.5'}, 'slow')
     }
+
+
 
 //  Анімації для сторінки "контакти"
     $('.contacts-content').animate({'top': '150px', 'opacity': '1'}, 'slow')
@@ -108,47 +154,7 @@ $(document).ready(function(){
         }
     }
 
-//    Анімація для навбару
-    $('#navbar').hover(function () {
-        $('.navbar-toggle-arrow:first').animate({ 'top': '-7' }, 70);
-        $('.navbar-toggle-arrow:last').animate({ 'top': '7' }, 70);
-    }, function () {
-        $('.navbar-toggle-arrow:first').animate({ 'top': '-5' }, 70);
-        $('.navbar-toggle-arrow:last').animate({ 'top': '5' }, 70);
-    });
 
-//    Поява меню
-    $('#navbar').click(function(){
-        $('body').css('overflow', 'hidden')
-        $('.menu').css('display', 'block')
-        $('.menu').animate({'width': '100%', 'height': '100%', 'left': '0', 'top': '0'}, 300)
-
-        $('.menu h1, h2').animate({'font-size': '30px'}, 300)
-    })
-
-//    Закрити меню
-    $('#closer').click(function(){
-        $('body').css('overflow', 'auto')
-        $('.menu').css('display', 'none')
-        $('.menu').animate({'width': '30%', 'height': '30%', 'left': '30%', 'top': '20%'}, 300)
-        $('.menu h1, h2').animate({'font-size': '10px'}, 300)
-    })
-
-//    Анімований блок з ім'ям персони
-    $('#animate-block').animate({'top': '44%', 'opacity': '1'}, 800)
-
-    function repeat_info(){
-        $('#animate-block .col:first').delay(6000).animate({'opacity': '0'}, 'slow')
-        $('#animate-block .col:last').delay(6500).animate({'opacity': '1'}, 'slow')
-
-        $('#animate-block .col:last').delay(7000).animate({'opacity': '0'}, 'slow')
-        $('#animate-block .col:first').delay(7500).animate({'opacity': '1'}, 'slow')
-    }
-
-    repeat_info()
-
-//    Повторення анімації
-    setInterval(repeat_info, 10000)
 
 //    Дія при наведенні на іконку телеграму
     $('.telegram').hover(function(){
