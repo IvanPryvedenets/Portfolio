@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="contacts-content">
+        <div class="row">
+            <h1>Контактна інформація</h1>
+            <div class="col-sm-3">
+                <p><span>Адреса: </span>м. Луцьк</p>
+            </div>
+
+            <div class="col-sm-3">
+                <p><span>Телефон: </span>+38(068)69-26-223</p>
+            </div>
+
+            <div class="col-sm-3">
+                <p><span>Email: </span>pryvivan@gmail.com</p>
+            </div>
+
+            <div class="col-sm-3">
+                <p><span>Website: </span>Pryvedenets_Ivan</p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5">
+
+                {% if successful %}
+                    <div class="successful">
+                        <span>Повідомлення відправлено успішно</span>
+                    </div>
+                {% endif %}
+
+                <form method="post">{% csrf_token %}
+                    {{ forms.as_p }}
+                    <button type="submit" class="btn">Відправити повідомлення</button>
+                </form>
+            </div>
+
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80797.60240865238!2d25.263793115375965!3d50.73987850843838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472599eba185965d%3A0xd25274a2228db86c!2z0JvRg9GG0LosINCS0L7Qu9GL0L3RgdC60LDRjyDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1sru!2sua!4v1572092072764!5m2!1sru!2sua" width="100%" height="32.5%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Pryvedenets Ivan</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script src="{% static 'jquery/Jquery.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/stiles.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <div class="w3-container">
+                <div class="logo-img-border">
+                    <a href="/Pryvedenets_Ivan/"><img class="logo-img" src="{% static 'img/photo_2019-07-29_10-36-24.jpg' %}"/></a>
+                </div>
+
+                <div class="author-name">P r y v e d e n e t s <span>_</span>  I v a n</div>
+
+                <a href="#" id="navbar">
+                    <div class="navbar-toggle-arrow"></div>
+                    <div class="navbar-toggle-arrow"></div>
+                    <div class="navbar-toggle-arrow"></div>
+                </a>
+            </div>
+        </header>
+
+        <div class="menu">
+            <img id="photo-2" src="{% static 'img/photo2.jpg' %}">
+
+            <a id="closer" href="#">&#10005;</a>
+
+            <div class="background-menu"></div>
+
+            <h1>Іван Приведенець</h1>
+            <div class="menu-items">
+                <a href="{% url 'main_url' %}"><h2>Про мене</h2></a>
+                <a href="{% url 'resume_url' %}"><h2>Резюме</h2></a>
+                <a href="{% url 'services_url' %}"><h2>Мої послуги</h2></a>
+                <a href="{% url 'portfolio_url' %}"><h2>Портфоліо</h2></a>
+                <a href="{% url 'contacts_url' %}"><h2>Контакти</h2></a>
+            </div>
+
+        </div>
+
+        {% include 'Performer/container_fluid.html' %}
+
+        <div class="main-container">
+            <div class="container">
+
+
+                {% block content %}
+
+                {% endblock %}
+
+
+                <div class="footer">
+
+                    <div class="row">
+
+                        <div class="col">
+                            <a href="https://www.facebook.com/profile.php?id=100021909762901"><img src="{% static 'img/facebook.png' %}"></a>
+                        </div>
+
+                        <div class="col">
+                            <a href="https://www.instagram.com/pryvedenets_vania/?hl=uk"><img src="{% static 'img/instagram.png' %}"></a>
+                        </div>
+
+                        <div class="col">
+                            <div class="telegram-info">@pryvedenets_vania</div>
+                            <a href="#"><img class="telegram" src="{% static 'img/telegram.png' %}"></a>
+                        </div>
+
+                    </div>
+
+                    <h1>Моя пошта</h1>
+                    <h2>pryvivan@gmail.com</h2>
+
+                    <h6>Copyright ©2019 All rights reserved | This template is made with &#10084;&#65039; by Colorlib</h6>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
