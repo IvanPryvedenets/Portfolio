@@ -46,3 +46,5 @@ class Contacts(View):
                 forms = EmailForm()
 
                 return render(request, 'Performer/contacts.html', context={'forms': forms, 'successful': successful})
+
+
