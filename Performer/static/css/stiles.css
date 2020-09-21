@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('opensans-extrabold-webfont.woff2') format('woff2'),
+         url('opensans-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     height: auto;
     margin: 0;
@@ -77,6 +86,21 @@ header {
 .navbar-toggle-arrow:last-child {
     top: 5px;
 }
+
+@media screen and (max-width: 756px) {
+    .author-name {
+        font-size: 15px;
+        padding: 15px 60px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .logo-img-border, .author-name {
+        display: none;
+    }
+}
+
 
 
 
@@ -256,14 +280,17 @@ header {
     #animate-block h1 {
         font-size: 27px;
     }
-
-    .author-name {
-        font-size: 15px;
-        padding: 15px 60px;
-
-    }
 }
 
+@media screen and (max-width: 450px) {
+    #animate-block h4 {
+        font-size: 13px;
+    }
+
+    #animate-block h1 {
+        font-size: 21px;
+    }
+}
 
 
 
@@ -285,8 +312,7 @@ header {
 }
 
 #about-author .col-sm-8 h1 {
-    font-family: 'Open Sans ExtraBold', sans-serif;
-    font-size: 170px;
+
     margin: 0;
     opacity: 0;
     position: absolute;
@@ -407,10 +433,6 @@ header {
         height: 1400px;
     }
 
-    .author-description .row .col {
-
-    }
-
     #main-image {
         height: 600px;
     }
@@ -425,9 +447,26 @@ header {
     }
 }
 
+@media screen and (max-width: 450px) {
+    #main-image {
+        height: 490px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #about-author .col-sm-8 h1 {
         font-size: 110px;
+        left: 10px;
+    }
+
+    .author-description {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #about-author .col-sm-8 h1 {
+        font-size: 94px;
         left: 10px;
     }
 
@@ -549,6 +588,13 @@ header {
     }
 }
 
+@media screen and (max-width: 450px) {
+    .portfolio-image {
+        height: 380px;
+        width: 280px;
+    }
+}
+
 /*fifth window - зроблена робота*/
 .fifth-window .container {
     height: 1100px;
@@ -643,6 +689,12 @@ header {
 .footer h6 {
     color: #969696;
     font-family: 'Open Sans Light', sans-serif;
+}
+
+@media screen and (max-width: 950px) {
+    .footer h2 {
+        font-size: 23px;
+    }
 }
 
 
@@ -773,6 +825,23 @@ header {
 
     .about-author .row .col-sm-12 .col h4 {
         font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 483px) {
+
+    .resume-content {
+        height: 6250px;
+    }
+
+    .about-author .row .col-sm-12 {
+        height: 160px;
+    }
+
+    .about-author .row .col-sm-12 .col h4 {
+        font-size: 15px;
+        float: left;
+        margin: 15px 0 0 0;
     }
 }
 
